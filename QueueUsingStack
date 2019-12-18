@@ -1,0 +1,50 @@
+#include<stdio.h>
+int Stack[10];
+int top=-1;
+void Enqueue(int ele)
+{
+    Stack[++top]=ele;
+}
+
+int recurse()
+{
+    if(top==0)
+        return Stack[top--];
+        int curvl=Stack[top--];
+    int res=recurse();
+    Enqueue(curvl);
+    return res;
+    }
+void Dequeue()
+{
+    (top>=0)?(top==0?printf("%d \n",Stack[top--]):printf("%d \n",recurse())) : printf("Queue is Empty\n");
+}
+
+int main()
+{
+    int sel=0;
+    while(sel!=-1)
+    {
+        printf("Enter 1.Enqueue 2.Dequeue 3.Exit\n");
+        scanf("%d",&sel);
+        switch(sel)
+        {
+            case 1: 
+            {
+                int ele;
+                printf("Enter Element: ");
+                scanf("%d",&ele);
+                Enqueue(ele);
+            }
+            break;
+            case 2:
+            Dequeue();
+            break;
+            case 3:
+              sel=-1;
+             break;
+        }
+    }
+    getch();
+    return 0;
+}
