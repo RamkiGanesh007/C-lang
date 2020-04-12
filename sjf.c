@@ -24,7 +24,7 @@ void main()
             if(bt[i]>bt[j])
             {
                bt[i]=(bt[i]+bt[j])-(bt[j]=bt[i]);
-               
+
                p[i]=(p[i]+p[j])-(p[j]=p[i]);
             }
         }
